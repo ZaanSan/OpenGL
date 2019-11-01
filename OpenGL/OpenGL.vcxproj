@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{A5AAD3B8-3A91-48C5-B163-8A550A0C1507}</ProjectGuid>
+    <RootNamespace>OpenGL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir)vendor\glfw-3.2.1\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\assimp\include;$(ProjectDir)vendor;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir)vendor\glfw-3.2.1\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\assimp\include;$(ProjectDir)vendor;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)vendor\glfw-3.2.1\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\assimp\include;$(ProjectDir)vendor;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)vendor\glfw-3.2.1\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\assimp\include;$(ProjectDir)vendor;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>IMGUI_IMPL_OPENGL_LOADER_GLAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)vendor\glfw-3.2.1\libs;$(ProjectDir)vendor\assimp\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>IMGUI_IMPL_OPENGL_LOADER_GLAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)vendor\glfw-3.2.1\libs;$(ProjectDir)vendor\assimp\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>IMGUI_IMPL_OPENGL_LOADER_GLAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)vendor\glfw-3.2.1\libs;$(ProjectDir)vendor\assimp\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>IMGUI_IMPL_OPENGL_LOADER_GLAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)vendor\glfw-3.2.1\libs;$(ProjectDir)vendor\assimp\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Shape.cpp" />
+    <ClCompile Include="src\Cubemap.cpp" />
+    <ClCompile Include="src\FrameBuffer.cpp" />
+    <ClCompile Include="src\Model.cpp" />
+    <ClCompile Include="src\CustomGLCallback.cpp" />
+    <ClCompile Include="src\InputSystem.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\IndexBuffer.cpp" />
+    <ClCompile Include="src\Mesh.cpp" />
+    <ClCompile Include="src\RenderBuffer.cpp" />
+    <ClCompile Include="src\Renderer.cpp" />
+    <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\tests\Test1.cpp" />
+    <ClCompile Include="src\tests\Test10.cpp" />
+    <ClCompile Include="src\tests\Test11.cpp" />
+    <ClCompile Include="src\tests\Test12.cpp" />
+    <ClCompile Include="src\tests\Test13.cpp" />
+    <ClCompile Include="src\tests\Test14.cpp" />
+    <ClCompile Include="src\tests\Test15.cpp" />
+    <ClCompile Include="src\tests\Test16.cpp" />
+    <ClCompile Include="src\tests\Test17.cpp" />
+    <ClCompile Include="src\tests\Test18.cpp" />
+    <ClCompile Include="src\tests\Test19.cpp" />
+    <ClCompile Include="src\tests\Test2.cpp" />
+    <ClCompile Include="src\tests\Test20.cpp" />
+    <ClCompile Include="src\tests\Test21.cpp" />
+    <ClCompile Include="src\tests\Test3.cpp" />
+    <ClCompile Include="src\tests\Test4.cpp" />
+    <ClCompile Include="src\tests\Test5.cpp" />
+    <ClCompile Include="src\tests\Test9.cpp" />
+    <ClCompile Include="src\Texture.cpp" />
+    <ClCompile Include="src\tests\Test6.cpp" />
+    <ClCompile Include="src\tests\Test7.cpp" />
+    <ClCompile Include="src\tests\Test8.cpp" />
+    <ClCompile Include="src\TextureManager.cpp" />
+    <ClCompile Include="vendor\glad\src\glad.c" />
+    <ClCompile Include="src\VertexBuffer.cpp" />
+    <ClCompile Include="src\VertexArray.cpp" />
+    <ClCompile Include="vendor\imgui\imgui.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="vendor\stb_image\stb_image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Shape.h" />
+    <ClInclude Include="src\Cubemap.h" />
+    <ClInclude Include="src\FrameBuffer.h" />
+    <ClInclude Include="src\Model.h" />
+    <ClInclude Include="src\CustomGLCallback.h" />
+    <ClInclude Include="src\InputSystem.h" />
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\IndexBuffer.h" />
+    <ClInclude Include="src\Light.h" />
+    <ClInclude Include="src\Mesh.h" />
+    <ClInclude Include="src\RenderBuffer.h" />
+    <ClInclude Include="src\Renderer.h" />
+    <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\tests\Test12.h" />
+    <ClInclude Include="src\tests\Test.h" />
+    <ClInclude Include="src\tests\Test1.h" />
+    <ClInclude Include="src\tests\Test10.h" />
+    <ClInclude Include="src\tests\Test11.h" />
+    <ClInclude Include="src\tests\Test13.h" />
+    <ClInclude Include="src\tests\Test14.h" />
+    <ClInclude Include="src\tests\Test15.h" />
+    <ClInclude Include="src\tests\Test16.h" />
+    <ClInclude Include="src\tests\Test17.h" />
+    <ClInclude Include="src\tests\Test18.h" />
+    <ClInclude Include="src\tests\Test19.h" />
+    <ClInclude Include="src\tests\Test2.h" />
+    <ClInclude Include="src\tests\Test20.h" />
+    <ClInclude Include="src\tests\Test21.h" />
+    <ClInclude Include="src\tests\Test3.h" />
+    <ClInclude Include="src\tests\Test4.h" />
+    <ClInclude Include="src\tests\Test5.h" />
+    <ClInclude Include="src\tests\Test9.h" />
+    <ClInclude Include="src\VertexBuffer.h" />
+    <ClInclude Include="src\VertexArray.h" />
+    <ClInclude Include="src\VertexBufferLayout.h" />
+    <ClInclude Include="src\Texture.h" />
+    <ClInclude Include="src\tests\Test6.h" />
+    <ClInclude Include="src\tests\Test7.h" />
+    <ClInclude Include="src\tests\Test8.h" />
+    <ClInclude Include="src\TextureManager.h" />
+    <ClInclude Include="vendor\imgui\imconfig.h" />
+    <ClInclude Include="vendor\imgui\imgui.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="vendor\imgui\imstb_truetype.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\Test10\fragment.glsl" />
+    <None Include="res\shaders\Test10\lightFragment.glsl" />
+    <None Include="res\shaders\Test10\vertex.glsl" />
+    <None Include="res\shaders\Test11\depthFragment.glsl" />
+    <None Include="res\shaders\Test11\fragment.glsl" />
+    <None Include="res\shaders\Test11\lightFragment.glsl" />
+    <None Include="res\shaders\Test11\vertex.glsl" />
+    <None Include="res\shaders\Test12\fragment.glsl" />
+    <None Include="res\shaders\Test12\lightFragment.glsl" />
+    <None Include="res\shaders\Test12\shaderSingleColor.glsl" />
+    <None Include="res\shaders\Test12\vertex.glsl" />
+    <None Include="res\shaders\Test13\fragment.glsl" />
+    <None Include="res\shaders\Test13\vertex.glsl" />
+    <None Include="res\shaders\Test14\fragment.glsl" />
+    <None Include="res\shaders\Test14\vertex.glsl" />
+    <None Include="res\shaders\Test15\fragment.glsl" />
+    <None Include="res\shaders\Test15\greyscale_f.glsl" />
+    <None Include="res\shaders\Test15\greyscale_pb_f.glsl" />
+    <None Include="res\shaders\Test15\inversion_f.glsl" />
+    <None Include="res\shaders\Test15\kernel_blur_f.glsl" />
+    <None Include="res\shaders\Test15\kernel_edge-detection_f.glsl" />
+    <None Include="res\shaders\Test15\kernel_sharpen_f.glsl" />
+    <None Include="res\shaders\Test15\simple_f.glsl" />
+    <None Include="res\shaders\Test15\simple_v.glsl" />
+    <None Include="res\shaders\Test15\vertex.glsl" />
+    <None Include="res\shaders\Test16\fragment_chrome.glsl" />
+    <None Include="res\shaders\Test16\fragment_glass.glsl" />
+    <None Include="res\shaders\Test16\fragment_reflection_model.glsl" />
+    <None Include="res\shaders\Test16\fragment_skybox.glsl" />
+    <None Include="res\shaders\Test16\vertex.glsl" />
+    <None Include="res\shaders\Test16\vertex_skybox.glsl" />
+    <None Include="res\shaders\Test17\fragment.glsl" />
+    <None Include="res\shaders\Test17\fragment_normal.glsl" />
+    <None Include="res\shaders\Test17\geometry.glsl" />
+    <None Include="res\shaders\Test17\geometry_normal.glsl" />
+    <None Include="res\shaders\Test17\vertex.glsl" />
+    <None Include="res\shaders\Test17\vertex_normal.glsl" />
+    <None Include="res\shaders\Test18\fragment.glsl" />
+    <None Include="res\shaders\Test18\rock_fragment.glsl" />
+    <None Include="res\shaders\Test18\rock_vertex.glsl" />
+    <None Include="res\shaders\Test18\vertex.glsl" />
+    <None Include="res\shaders\Test19\fragment.glsl" />
+    <None Include="res\shaders\Test19\vertex.glsl" />
+    <None Include="res\shaders\Test1\fragment.glsl" />
+    <None Include="res\shaders\Test1\vertex.glsl" />
+    <None Include="res\shaders\Test20\debug_depth_fragment.glsl" />
+    <None Include="res\shaders\Test20\debug_depth_vertex.glsl" />
+    <None Include="res\shaders\Test20\fragment.glsl" />
+    <None Include="res\shaders\Test20\simple_depth_fragment.glsl" />
+    <None Include="res\shaders\Test20\simple_depth_vertex.glsl" />
+    <None Include="res\shaders\Test20\vertex.glsl" />
+    <None Include="res\shaders\Test21\fragment.glsl" />
+    <None Include="res\shaders\Test21\simple_depth_fragment.glsl" />
+    <None Include="res\shaders\Test21\simple_depth_vertex.glsl" />
+    <None Include="res\shaders\Test21\vertex.glsl" />
+    <None Include="res\shaders\Test2\fragment.glsl" />
+    <None Include="res\shaders\Test2\vertex.glsl" />
+    <None Include="res\shaders\Test3\fragment.glsl" />
+    <None Include="res\shaders\Test3\vertex.glsl" />
+    <None Include="res\shaders\Test4\fragment.glsl" />
+    <None Include="res\shaders\Test4\vertex.glsl" />
+    <None Include="res\shaders\Test5\fragment.glsl" />
+    <None Include="res\shaders\Test5\vertex.glsl" />
+    <None Include="res\shaders\Test6\fragment.glsl" />
+    <None Include="res\shaders\Test6\lightFragment.glsl" />
+    <None Include="res\shaders\Test6\vertex.glsl" />
+    <None Include="res\shaders\Test7\fragment.glsl" />
+    <None Include="res\shaders\Test7\lightFragment.glsl" />
+    <None Include="res\shaders\Test7\vertex.glsl" />
+    <None Include="res\shaders\Test8\fragment.glsl" />
+    <None Include="res\shaders\Test8\lightFragment.glsl" />
+    <None Include="res\shaders\Test8\vertex.glsl" />
+    <None Include="res\shaders\Test9\DirectionalLightFragment.glsl" />
+    <None Include="res\shaders\Test9\fragment.glsl" />
+    <None Include="res\shaders\Test9\lightFragment.glsl" />
+    <None Include="res\shaders\Test9\PointLightFragment.glsl" />
+    <None Include="res\shaders\Test9\SpotLightFragment.glsl" />
+    <None Include="res\shaders\Test9\vertex.glsl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
