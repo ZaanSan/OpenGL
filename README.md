@@ -1,8 +1,27 @@
+![CPP](https://img.shields.io/badge/C++-11-blue.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 # OpenGL
-OpenGL learning/testing sandbox
+OpenGL 3D renderer for learning and testing. Tutorials used : https://learnopengl.com/
+
+## Getting Started
+
+### Prerequisites
+
+Windows only.
+
+Visual studio 2017/2019.
+
+### How to use it
+
+Open OpenGL.sln
+Be sure to select x86 as Target Platform (x64 will not work)
+Launch
+
+You may need to restart the program sometimes beacaue some tests will not work properly. This is due to a lack of abstraction of renderer state betweem tests. Some tests use differents states than others and it doesn't go well when you navigate between them.
 
 
-# Tests
+## Tests
 
 Test1:  Simple triangle rendering <br/>
 Test2:  Mix two textures <br/>
