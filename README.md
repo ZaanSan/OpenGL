@@ -14,10 +14,13 @@ Visual studio 2017/2019.
 
 ### How to use it
 
-Open OpenGL.sln
-Be sure to select x86 as Target Platform (x64 will not work)
-Launch
+- Open OpenGL.sln
 
+- Be sure to select x86 as Target Platform (x64 will not work)
+
+- Launch
+<br/>
+<br/>
 You may need to restart the program sometimes beacaue some tests will not work properly. This is due to a lack of abstraction of renderer state betweem tests. Some tests use differents states than others and it doesn't go well when you navigate between them.
 
 
