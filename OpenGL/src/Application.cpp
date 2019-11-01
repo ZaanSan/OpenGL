@@ -10,6 +10,12 @@
 #include "CustomGLCallback.h"
 #include "Renderer.h"
 
+#include "tests/TestMenu.h"
+#include "tests/Test1.h"
+#include "tests/Test2.h"
+#include "tests/Test3.h"
+#include "tests/Test4.h"
+#include "tests/Test5.h"
 #include "tests/Test6.h"
 #include "tests/Test7.h"
 #include "tests/Test8.h"
@@ -31,12 +37,12 @@
 extern const unsigned int SCR_WIDTH = 1920;
 extern const unsigned int SCR_HEIGHT = 1080;
 
-/*
+
 // enable optimus! => Use of nvidia card
-extern "C" {
-	_declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
-}
-*/
+//extern "C" {
+//	_declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
+//}
+
 
 
 
@@ -103,7 +109,30 @@ int	main()
 
 		ImGui::StyleColorsDark();
 
-		test::Test10 test;
+		test::Test* currentTest = nullptr;
+		test::TestMenu* menu = new test::TestMenu(currentTest);
+		currentTest = menu;
+
+		menu->RegisterTest<test::Test1>("Simple triangle rendering");
+		menu->RegisterTest<test::Test2>("Mix two textures");
+		menu->RegisterTest<test::Test3>("Transformations");
+		menu->RegisterTest<test::Test4>("Camera");
+		menu->RegisterTest<test::Test5>("Map camera to keyboard");
+		menu->RegisterTest<test::Test6>("Point light with Phong lighting model");
+		menu->RegisterTest<test::Test7>("Material + change light color over time");
+		menu->RegisterTest<test::Test8>("Light map");
+		menu->RegisterTest<test::Test9>("Directional, point and spot lights");
+		menu->RegisterTest<test::Test10>("3D model loading + lighting");
+		menu->RegisterTest<test::Test11>("Depth buffer visualization with Sponza");
+		menu->RegisterTest<test::Test12>("Outline using stencil buffer (need to fix imgui on this one)");
+		menu->RegisterTest<test::Test13>("Blending");
+		menu->RegisterTest<test::Test14>("Backface culling");
+		menu->RegisterTest<test::Test15>("Postprocessing");
+		menu->RegisterTest<test::Test16>("Cubemap (skybox + environment mapping)");
+		menu->RegisterTest<test::Test17>("Normal vector visualization + exploding object using geometry shader");
+		menu->RegisterTest<test::Test18>("Asteroid field instancing");
+		menu->RegisterTest<test::Test19>("Multisample anti-aliasing (MSAA)");
+		menu->RegisterTest<test::Test20>("Shadow mapping");
 
 		float deltaTime = 0.0f;	// Time between current frame and last frame
 		float lastFrame = 0.0f; // Time of last frame
@@ -117,13 +146,23 @@ int	main()
 			const float currentFrame = static_cast<float>(glfwGetTime());
 			deltaTime = currentFrame - lastFrame;
 			lastFrame = currentFrame;
-			test.OnUpdate(currentFrame, deltaTime);
-			test.OnRender();
-
+		
 			ImGui_ImplOpenGL3_NewFrame();
 			ImGui_ImplGlfw_NewFrame();
 			ImGui::NewFrame();
-			test.OnImGuiRender();
+			if (currentTest)
+			{
+				currentTest->OnUpdate(currentFrame, deltaTime);
+				currentTest->OnRender();
+				ImGui::Begin("test");
+				if (currentTest != menu && ImGui::Button("<-"))
+				{
+					delete currentTest;
+					currentTest = menu;
+				}
+				currentTest->OnImGuiRender();
+				ImGui::End();
+			}
 			ImGui::Render();
 			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 

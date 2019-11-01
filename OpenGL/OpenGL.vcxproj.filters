@@ -153,6 +153,9 @@
     <ClCompile Include="src\tests\Test21.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\tests\TestMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
@@ -300,6 +303,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\tests\Test21.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tests\TestMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

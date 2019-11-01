@@ -181,6 +181,7 @@
     <ClCompile Include="src\tests\Test4.cpp" />
     <ClCompile Include="src\tests\Test5.cpp" />
     <ClCompile Include="src\tests\Test9.cpp" />
+    <ClCompile Include="src\tests\TestMenu.cpp" />
     <ClCompile Include="src\Texture.cpp" />
     <ClCompile Include="src\tests\Test6.cpp" />
     <ClCompile Include="src\tests\Test7.cpp" />
@@ -230,6 +231,7 @@
     <ClInclude Include="src\tests\Test4.h" />
     <ClInclude Include="src\tests\Test5.h" />
     <ClInclude Include="src\tests\Test9.h" />
+    <ClInclude Include="src\tests\TestMenu.h" />
     <ClInclude Include="src\VertexBuffer.h" />
     <ClInclude Include="src\VertexArray.h" />
     <ClInclude Include="src\VertexBufferLayout.h" />
