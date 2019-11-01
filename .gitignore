@@ -26,6 +26,10 @@
 *.a
 *.lib
 
+# Add vendor libs
+!OpenGL/vendor/**
+
+
 # Executables
 *.exe
 *.out
